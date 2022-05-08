@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from BurgerApi.views import UserProfileViewSet
+from BurgerApi.views import UserProfileViewSet, OrderViewSet
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -9,6 +10,7 @@ from rest_framework_simplejwt.views import (
 
 router = DefaultRouter()
 router.register(r"user", UserProfileViewSet)
+router.register(r"order", OrderViewSet, basename="order")
 
 
 
